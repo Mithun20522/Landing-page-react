@@ -1,4 +1,5 @@
 import Header from "../components/Header"
+import MenuNav from "../components/MenuNav"
 import ToggleOptions from "../components/ToggleOptions"
 
 const Vibe = () => {
@@ -6,6 +7,7 @@ const Vibe = () => {
     <div>
         <Header/>
         <ToggleOptions/>
+        <MenuNav/>
     </div>
   )
 }
