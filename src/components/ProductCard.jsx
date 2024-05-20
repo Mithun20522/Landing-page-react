@@ -3,6 +3,7 @@ import { IoShareOutline } from "react-icons/io5";
 
 const ProductCard = ({ product }) => {
   const [isDiscount, setIsDiscount] = useState(false);
+  const [isShareClicked, setIsShareClicked] = useState(false);
 
   useEffect(() => {
     if (product.discountPercent > 0) {
@@ -15,7 +16,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div onClick={() => handleClick(product.id)} className="relative p-2">
+    <div onClick={() => handleClick(product.id)} className="relative p-2 cursor-pointer">
       <img src={product.images[0].src} alt={product.title} className="w-[150px] h-[150px]" />
       <div className="w-full p-1 text-sm">
         <span className="text-sm text-slate-700">{product.vendor}</span>
@@ -30,7 +31,7 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
       </div>
-      <IoShareOutline className="absolute bottom-32 cursor-pointer bg-slate-700 shadow text-white rounded-full w-8 h-8 p-1 right-10" />
+      <IoShareOutline onClick={() => setIsShareClicked(!isShareClicked)} className="absolute bottom-32 cursor-pointer bg-slate-700 shadow text-white rounded-full w-8 h-8 p-1 right-10" />
     </div>
   );
 };
