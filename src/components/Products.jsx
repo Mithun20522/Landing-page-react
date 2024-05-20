@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import ProductContext from '../context/ProductContext';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [totalProducts, setTotalProducts] = useState(0)
+  const {total, setTotal} = useContext(ProductContext)
 
   const getProducts = async () => {
     try {
@@ -53,7 +55,7 @@ const Products = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [loading]); 
-
+  setTotal(totalProducts)
   return (
     <div className="justify-center mt-5 flex gap-2 flex-wrap scroll-smooth">
       {products.map((product, idx) => (
