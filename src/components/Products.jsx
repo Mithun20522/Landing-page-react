@@ -55,6 +55,8 @@ const Products = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [loading]); 
   
+
+
   return (
     <div className="justify-center mt-5 flex gap-2 flex-wrap scroll-smooth">
       {products.map((product, idx) => (
