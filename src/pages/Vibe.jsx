@@ -1,6 +1,10 @@
+import Header from "../components/Header"
+
 const Vibe = () => {
   return (
-    <div>Vibe</div>
+    <div>
+        <Header/>
+    </div>
   )
 }
 
