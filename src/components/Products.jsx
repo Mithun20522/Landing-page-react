@@ -4,7 +4,7 @@ import ProductContext from '../context/ProductContext';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const [loading, setLoading] = useState(false);
   const {setTotal} = useContext(ProductContext)
 
@@ -22,7 +22,7 @@ const Products = () => {
             "filters": [],
             "id": "#HomeHunts",
             "page": page,
-            "pageSize": 5
+            "pageSize": 10
           }
         })
       });
