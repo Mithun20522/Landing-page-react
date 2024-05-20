@@ -6,8 +6,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [totalProducts, setTotalProducts] = useState(0)
-  const {total, setTotal} = useContext(ProductContext)
+  const {setTotal} = useContext(ProductContext)
 
   const getProducts = async () => {
     try {
@@ -28,7 +27,7 @@ const Products = () => {
         })
       });
       const data = await res.json();
-      setTotalProducts(data.data.getListingProducts.totalProducts)
+      setTotal(data.data.getListingProducts.totalProducts)
       setProducts(prevProducts => [...prevProducts, ...data.data.getListingProducts.products]);
       setPage(prevPage => prevPage + 1);
     } catch (error) {
@@ -55,7 +54,7 @@ const Products = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [loading]); 
-  setTotal(totalProducts)
+  
   return (
     <div className="justify-center mt-5 flex gap-2 flex-wrap scroll-smooth">
       {products.map((product, idx) => (

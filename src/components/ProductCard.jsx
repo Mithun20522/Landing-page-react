@@ -2,7 +2,7 @@ import { IoShareOutline } from "react-icons/io5";
 
 const ProductCard = ({product}) => {
   return (
-    <div className='relative max-w-[255px] p-2'>
+    <div className='relative max-w-[255px] p-1'>
       <img src={product.images[0].src} alt={product.title} className='w-[200px] h-[200px]' />
       <div className='w-full  p-1 text-sm'>
         <span className="text-sm text-slate-700">{product.vendor}</span>
