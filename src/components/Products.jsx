@@ -58,7 +58,7 @@ const Products = () => {
 
 
   return (
-    <div className="justify-center mt-5 flex gap-2 flex-wrap scroll-smooth">
+    <div className="mt-5 flex justify-center flex-wrap scroll-smooth">
       {products.map((product, idx) => (
         <ProductCard key={`${product.id}${idx}+1`} product={product} />
       ))}
